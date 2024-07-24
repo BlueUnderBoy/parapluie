@@ -22,12 +22,16 @@ gmaps_url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{user_lo
 # p gmaps_url
 
 raw_gmaps_data = HTTP.get(gmaps_url)
+puts raw_gmaps_data
 
 parsed_gmaps_data = JSON.parse(raw_gmaps_data)
+puts parsed_gmaps_data
 
 results_array = parsed_gmaps_data.fetch("results")
+puts results_array
 
 first_result_hash = results_array.at(0)
+puts first_result_hash
 
 #geometry_hash = first_result_hash.fetch("geometry")
 
