@@ -1,5 +1,3 @@
 source "https://rubygems.org"
 
-gem "http"
-
-gem"bundler"
+gem"http"
