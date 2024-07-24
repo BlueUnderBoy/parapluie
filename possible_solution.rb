@@ -34,16 +34,16 @@ puts results_array
 first_result_hash = results_array.at(0)
 puts first_result_hash
 
-#geometry_hash = first_result_hash.fetch("geometry")
+geometry_hash = first_result_hash.fetch("geometry")
 
-#location_hash = geometry_hash.fetch("location")
+location_hash = geometry_hash.fetch("location")
 
-#latitude = location_hash.fetch("lat")
+latitude = location_hash.fetch("lat")
 
-#longitude = location_hash.fetch("lng")
+longitude = location_hash.fetch("lng")
 
-#puts "Your coordinates are #{latitude}, #{longitude}."
-puts "Nice!"
+puts "Your coordinates are #{latitude}, #{longitude}."
+
 # Get the weather from Pirate Weather API
 
 pirate_weather_key = ENV['PW']
