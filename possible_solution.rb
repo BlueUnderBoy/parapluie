@@ -1,5 +1,6 @@
 require "http"
 require "json"
+require "ascii_charts"
 
 line_width = 40
 
@@ -15,7 +16,6 @@ puts "Checking the weather at #{user_location}...."
 # Get the lat/lng of location from Google Maps API
 
 gmaps_key = ENV['GM']
-puts ENV['GM']
 
 gmaps_url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{user_location}&key=#{gmaps_key}"
 
