@@ -72,7 +72,7 @@ hourly_hash = parsed_pirate_weather_data.fetch("hourly")
 
 hourly_data_array = hourly_hash.fetch("data")
 
-next_twelve_hours = hourly_data_array[1..12]
+next_twelve_hours = hourly_data_array[0..12]
 
 precip_prob_threshold = 0.10
 
@@ -88,11 +88,11 @@ next_twelve_hours.each do |hour_hash|
 
     seconds_from_now = precip_time - Time.now
 
-    hours_from_now = seconds_from_now / 60 / 60
+    hours_from_now = (seconds_from_now / 60 )/ 60
 
     puts "In #{hours_from_now.round} hours, there is a #{(precip_prob * 100).round}% chance of precipitation."
   end
-  puts AsciiCharts::Cartesian.new((0...(next_twelve_hours.length)), (precip_prob[0]...precip_prob[(precip_prob.length)]) :bar => true).draw
+  puts AsciiCharts::Cartesian.new((0...(next_twelve_hours.length)), (precip_prob[0]...precip_prob[(precip_prob.length)]), :bar => true).draw
 end
 
 if any_precipitation == true
