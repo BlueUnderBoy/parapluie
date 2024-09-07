@@ -92,7 +92,7 @@ next_twelve_hours.each do |hour_hash|
 
     puts "In #{hours_from_now.round} hours, there is a #{(precip_prob * 100).round}% chance of precipitation."
   end
-  puts AsciiCharts::Cartesian.new((0...(next_twelve_hours.length)), (precip_prob[0]...precip_prob[(precip_prob.length)]), :bar => true).draw
+  puts AsciiCharts::Cartesian.new((0...(next_twelve_hours.length)), (precip_prob[0]...precip_prob[(precip_prob.length)])).draw
 end
 
 if any_precipitation == true
