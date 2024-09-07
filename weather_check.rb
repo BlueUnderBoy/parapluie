@@ -94,7 +94,7 @@ next_twelve_hours.each do |hour_hash|
   end
   chart = AsciiCharts::Cartesian.new(
     (0...next_twelve_hours.length),
-    Float(precip_prob)
+    precip_prob
     #:bar => true
   )
   puts chart.draw   
